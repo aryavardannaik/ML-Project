@@ -19,7 +19,7 @@ class Dataingestion:
         
     def initiate_data_ingestion(self):
         try:
-            df= read_SQL_data()
+            df= read_SQL_data(os.path.join('notbook/data', 'raw.csv'))
             logging.info("Reading Data from MYSQL")
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok = True)
             
